@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container h1 {
+  background: linear-gradient(-1deg, orange, white);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.container {
+  background-color: #151515;
+  height: auto;
+  min-height: calc(100vh - 50px);
+  max-height: auto;
+  color: white;
+}
+
+.content-container {
+  margin-left: 50px;
+}
+
+.featured-content {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 50px;
+}
+
+#featured-title {
+  margin-top: 2rem;
+}
+
+.container-featured-descp{
+  width: 70%;
+  height: auto;
+}
+
+.featured-desc {
+  color: lightgray;
+}
+
+.featured-button {
+  background-color: orange;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.movie-list-container {
+  padding: 0 20px;
+  margin-top: 3rem;
+}
+#movie-list-container-all{
+  padding-bottom: 4rem;
+}
+#movie-list-wrapper-all {
+  margin-top: 1rem;
+}
+
+.movie-list-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-list {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  height: 300px;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+
+
+.movie-list-all {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: auto;
+  gap: 2rem 1rem;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+
+.movie-list-ctg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 3rem 0;
+  margin: 0 auto;
+  gap: 2rem 1rem;
+  width: 95%;
+  height: auto;
+  transition: all 1s ease-in-out;
+}
+
+.movie-list-item {
+  position: relative;
+}
+
+.btn-heart{
+  color: #b90808;
+  position: absolute;
+  left: 45%;
+  bottom: -10%;
+  font-size: 8rem;
+  transform: translate(-40%,-30%);
+  display: none;
+  animation: 2s ease-in-out forwards show-btn-heart;
+}
+#btn-heartbreak{
+  left: 15%;
+  margin-right: 1rem;
+  font-size: 1rem;
+  background-color: #151515;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+  transform: scale(1);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button {
+  opacity: 1;
+}
+
+.movie-list-item-img {
+  transition: all 1s ease-in-out;
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.movie-list-item-title {
+  padding: 0 10px;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 18%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc {
+  background-color: orange;
+  padding: 10px;
+  white-space: wrap;
+  font-size: 14px;
+  position: absolute;
+  top: 30%;
+  left: 50px;
+  width: 230px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.container-btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2ca4b4;
+  width: 40%;
+}
+
+.movie-list-item-button {
+  padding: 10px;
+  background-color: rgb(0, 140, 255);
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 22%;
+  left: 20%;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+#btn-heart{
+  left: 15%;
+  font-size: 1.3rem;
+  background-color: #b90808;
+}
+
+#btn-play{
+  left: 30%;
+  font-size: 1.3rem;
+  background-color: #084cb9;
+}
+
+.arrow {
+  font-size: 120px;
+  position: absolute;
+  top: 90px;
+  right: 0;
+  color: lightgray;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.container.active {
+  background-color: white;
+}
+
+.movie-list-title.active {
+  color: black;
+}
+
+
+
+
+
+@media only screen and (max-width: 940px){
+    .menu-container{
+        display: none;
+    }
+}
+
+.wrapper {
+  width: 420px;
+  background: white;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+  text-align: center;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  color: black;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+  color: black;
+}
+
+.register-link p a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+@keyframes show-btn-heart{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

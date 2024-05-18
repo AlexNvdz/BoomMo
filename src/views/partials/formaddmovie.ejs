@@ -1,0 +1,108 @@
+<div id="container-title-form">
+    <h1 id="h1-add-movie">Agregar Peliculas</h1>
+</div>
+<form id="form-add-movie" action="/movies/new" method="post" enctype="multipart/form-data">
+    <div class="div-container-inps">
+        <div class="form-add-movie__inp">
+            <label for="inp-title">Titulo:</label>
+            <input required name="titulo" placeholder="titulo" id="inp-title" type="text">
+        </div>
+        <div class="form-add-movie__inp">
+            <label for="inp-descp">Descripción:</label>
+            <textarea required placeholder="descripcion" name="descripcion" id="inp-descp"></textarea>
+        </div>
+        <div class="form-add-movie__inp">
+            <label for="inp-dir">Director:</label>
+            <input required name="director" placeholder="director" id="inp-title" type="text" >
+        </div>
+        <div class="form-add-movie__inp">
+            <label for="inp-title">Lanzamiento:</label>
+            <input required name="lanz" id="inp-title" type="date" >
+        </div>
+        <div class="form-add-movie__inp">
+            <label for="select-categs">Categoria:</label>
+            <select required name="categ" id="select-categs" >
+                <option value="">Seleccionar categoria</option>
+                <option value="accion">Acción</option>
+                <option value="anime">Anime</option>
+                <option value="comedia">Comedia</option>
+                <option value="ciencia ficcion">Ciencia ficcion</option>
+                <option value="doramas">Doramas</option>
+                <option value="infantil">Infantil</option>
+                <option value="romance">Romance</option>
+                <option value="misterio">Misterio</option>
+                <option value="terror">Terror</option>
+            </select>
+        </div>
+        <div class="form-add-movie__inp">
+            <label for="inp-title">URL:</label>
+            <input required name="url" placeholder="url de la pelicula" id="inp-title" type="text">
+        </div>
+        <div class="form-add-movie__inp container-inp-imgs">
+            <label for="inp-title">Imagen de portada:</label>
+            <div>
+                <input required name="imgs" accept="image/*" id="inp-title" type="file" >
+            </div>
+        </div>
+        <div class="form-add-movie__inp container-inp-imgs">
+            <label for="inp-title">Imagen adicional:</label>
+            <div>
+                <input required name="imgs" id="inp-title" type="file"  accept="image/*">
+                <i class="bi icon-agg bi-folder-plus"></i>
+            </div>
+        </div>
+    </div>
+
+    <button id="btn-reg-movie">REGISTRAR</button>
+</form>
+<script>
+    const formDivContainer = document.querySelector(".div-container-inps")
+
+    formDivContainer.addEventListener("click", handleCLick)
+
+    function handleCLick(e) {
+        const target = e.target;
+        const eClassName = target.className;
+        if (eClassName.includes("icon-agg")) aggDivInp(target)
+        if (eClassName.includes("icon-cinp")) deltDivInp(target)
+    }
+
+    function aggDivInp(target) {
+        const divInp = returnDivInp()
+
+        const div = document.createElement("div")
+        div.classList.add("form-add-movie__inp","container-inp-imgs")
+        div.innerHTML = divInp
+        formDivContainer.appendChild(div)
+    }
+
+    function returnDivInp() {
+        return `
+            <label for="inp-title">Imagen adicional:</label>
+            <div>
+                <i class="bi icon-cinp bi-folder-x"></i>
+                <input required name="imgs" id="inp-title" type="file"  accept="image/*">
+                <i class="bi icon-agg bi-folder-plus"></i>
+            </div>`
+    }
+
+    function deltDivInp(target) {
+        const divInp = target.parentElement.parentElement
+        formDivContainer.removeChild(divInp)
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert != "undefined") { %>
+
+      <script>
+        Swal.fire({
+          title:'<%= alert.alertTitle %>',
+          text:'<%= alert.alertMessage %>',
+          icon:'<%= alert.alertIcon %>',
+          showConfirmButton:<%= alert.showConfirmButton %> ,
+          timer:<%= alert.timer %>
+        }).then(()=>{
+          window.location='/<%= alert.ruta %>'
+        })
+      </script>
+      <% } %>

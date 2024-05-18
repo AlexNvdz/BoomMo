@@ -1,0 +1,57 @@
+<div class="movie-list-container">
+  <h1 class="movie-list-title">Nuevos Lanzamientos</h1>
+  <div class="movie-list-wrapper">
+    <div id="list-movies-realeses" class="movie-list">
+      <%moviesReleases.forEach(mv=>{%>
+        <div class="home-movie-list movie-list-item">
+          <div>
+            <img data-id="<%=mv.id%>" class="movie-list-item-img" src="<%=mv.img_portada%>" alt="" />
+            <span class="movie-list-item-title">
+              <%=mv.titulo%>
+            </span>
+            <div class="container-btns">
+              <a href="/movies/view?movieid=<%=mv.id%>" id="btn-play" class="movie-list-item-button">
+                <i class="bi bi-play-circle"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <%})%>
+    </div>
+    <i class="fas fa-chevron-right arrow"></i>
+  </div>
+</div>
+
+
+
+<div class="movie-list-container" id="movie-list-container-all">
+  <h1 class="movie-list-title">Todas</h1>
+  <div class="movie-list-wrapper" id="movie-list-wrapper-all">
+    <div class="home-movie-list movie-list-all">
+      <%movies.forEach(mv=>{%>
+        <div class="movie-list-item">
+          <img data-id="<%=mv.id%>" class="movie-list-item-img" src="<%=mv.img_portada%>" alt="" />
+          <span style="pointer-events: none;" class="movie-list-item-title">
+            <%=mv.titulo%>
+          </span>
+          <a href="/movies/view?movieid=<%=mv.id%>" class="movie-list-item-button" id="btn-play">
+            <i class="bi bi-play-circle"></i>
+          </a>
+         
+          <i style="cursor: none;" class="bi btn-heart bi-heart-fill"></i>
+        </div>
+        <%})%>
+    </div>
+  </div>
+</div>
+<script>
+  // const containerItem = document.querySelectorAll('.movie-list-item');
+  // for (let i = 0; i < containerItem.length; i++) {
+  //    containerItem[i].addEventListener('dblclick',handleDbClick);
+  // }
+
+  // function handleDbClick(e) {
+  //   // alert("Double click")
+  //   console.log(e.target);
+  // }
+</script>

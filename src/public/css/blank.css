@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://i.postimg.cc/dVcNfbf1/Picsart-24-04-23-13-35-02-552.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .wrapper {
+    width: 420px;
+    background: white;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    text-align: center;
+  }
+  
+  .wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    color: black;
+  }
+  
+  .wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+    color: black;
+  }
+  
+  .register-link p a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .register-link p a:hover {
+    text-decoration: underline;
+  }
+  

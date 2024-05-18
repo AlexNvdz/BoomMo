@@ -1,0 +1,28 @@
+<div id="container-view-movie">
+    <h1 id="view-movie-title">
+        <%=movie.titulo%>
+    </h1>
+    <iframe height="450" width="550" src="<%=movie.url%>" frameborder="0" allowfullscreen></iframe>
+    <div class="container-descp">
+        <p id="view-movie-descp">
+        Lanzamiento: <%=movie.lanz%>
+        </p>
+    </div>
+    <div class="container-descp">
+        <p id="view-movie-descp">
+            Director:   <%=movie.director%>
+        </p>
+    </div>
+    <div class="container-descp">
+        <p id="view-movie-descp">
+        Trama: <%=movie.descripcion%>
+        </p>
+    </div>
+
+</div>
+<script>
+    const container = document.querySelector(".container")
+    container.style.background = `
+      linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515),
+      url(<%=movie.img_portada%>) no-repeat center / cover`;
+</script>

@@ -1,0 +1,11 @@
+<div class="container-categs">
+<%categs.forEach(ctg=> {%>
+    <div class="categ">
+      <a class="categ__a" href="/users/categoria/<%=ctg.categoria%>">
+        <h1>
+          <%=ctg.categoria.toUpperCase()%>
+        </h1>
+      </a>
+    </div>
+  <%})%>
+</div>

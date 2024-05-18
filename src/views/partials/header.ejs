@@ -1,0 +1,30 @@
+<div id="navbar" class="navbar">
+  <div class="navbar-container">
+    <div class="icon-container">
+      <i class="bx bxs-bomb"></i>
+    </div>
+    <div class="logo-container">
+      <h1 class="logo">BoomMo</h1>
+    </div>
+    <div class="menu-container">
+      <ul class="menu-list">
+        <li><a href="/users/inicio" class="menu-list-item ">Inicio</a></li>
+        <li><a href="/users/categorias" class="menu-list-item">Categorias</a></li>
+        <li><a href="/users/favoritos" class="menu-list-item">Favoritos</a></li>
+        <li><a href="/users/historial" class="menu-list-item">Historial</a></li>
+      </ul>
+    </div>
+    <div class="profile-container">
+      <i class="bx bxs-user"></i>
+      <div class="profile-text-container">
+        <a style="text-decoration: none; color: #fff;" href="/users/perfil">
+          <span class="profile-text">
+            <%= name ? name : "" %>
+          </span>
+        </a>
+        <i class="fas fa-caret-down"></i>
+        <a style="text-decoration: none; color: #fff;" href="/logout">Salir</a>
+      </div>
+    </div>
+  </div>
+</div>

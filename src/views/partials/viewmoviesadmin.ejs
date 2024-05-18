@@ -1,0 +1,25 @@
+<div class="container">
+  <div id="container-btn-new-movie">
+    <a href="/admin/newmovie">Agregar</a>
+  </div>
+  <div class="movie-list-ctg">
+    <%if(movies.length> 0){%>
+      <%movies.forEach(mv=>{%>
+        <div class="movie-list-item">
+          <img class="movie-list-item-img" src="<%=mv.img_portada%>" alt="" />
+          <span class="movie-list-item-title">
+            <%=mv.titulo%>
+          </span>
+          <!-- <a style="left: 15%;" href="/movies/update?movieid=<%=mv.id%>" class="movie-list-item-button" id="btn-edit">
+            <i class="bi bi-pencil"></i>
+          </a> -->
+          <a href="/movies/view?movieid=<%=mv.id%>" class="movie-list-item-button" id="btn-play">
+            <i class="bi bi-play-circle"></i>
+          </a>
+        </div>
+        <%})%>
+          <%} else {%>
+            <h1 style="margin: auto;">No hay peliculas</h1>
+            <%}%>
+  </div>
+</div>

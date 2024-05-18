@@ -1,0 +1,28 @@
+<div id="navbar" class="navbar">
+    <div class="navbar-container">
+      <div class="icon-container">
+        <i class="bx bxs-bomb"></i>
+      </div>
+      <div class="logo-container">
+        <h1 class="logo">BoomMo</h1>
+      </div>
+      <div class="menu-container">
+        <ul class="menu-list">
+          <li><a href="/admin/dashboard" class="menu-list-item ">Dashboard</a></li>
+          <li><a href="/admin/peliculas" class="menu-list-item">Peliculas</a></li>
+        </ul>
+      </div>
+      <div class="profile-container">
+        <i class="bx bxs-user"></i>
+        <div class="profile-text-container">
+          <a style="text-decoration: none; color: #fff;" href="/admin/perfil">
+            <span class="profile-text">
+              <%= name ? name : "" %>
+            </span>
+          </a>
+          <i class="fas fa-caret-down"></i>
+          <a style="text-decoration: none; color: #fff;" href="/logout">Salir</a>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+pasos a seguir para ejecutar bien el programa, es importante no omitir ninguno:
+antes de iniciar comento que hay un archivo txt env cambialo a .env
+1. instalar las dependencias del proyecto (ejecutar el comando npm install)
+
+2. configurar la conexion a la base de datos, deberas ir al archivo env.txt y editar todas las variables que inican con DB_
+si no tienes contraseña para acceder a la bd dejala en blanco
+las demas variables que ya tienen un valor por defecto no las modificas
+
+3. configurar las credenciales en nodemailer, ve a src/lib/nodemailer.js 
+ahi esta un metodo sendEmail, encontraras un objeto options lo unico que editaras sera en la propiedad
+auth de options esta user que es el correo que se usara para enviar los mensajes
+pass que es la contraseña de aplicacion generada en gmail (ojo no es tu contraseña del correo)
+importante esta contraseña tiene que ser del email que se usara
+tambien editaras la propiedad from del objeto msg, sera el mismo email de user
+
+4. crear la base de datos, ve a src/database/main.sql 
+ copia todo el contenido y luego ve a xampp o workbench a pegarlo en la caja de consultas
+ y ejecuta el script
+
+5. regresa a la app y ejecuta npm run dev
+
+6. registra usuarios desde el register, para acceder como usuarios
+
+7. para acceder al dashboard el usuario es admin y la contraseña es administrador
+

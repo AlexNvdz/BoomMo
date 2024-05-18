@@ -1,0 +1,51 @@
+.container {
+    background: url('https://i.pinimg.com/236x/76/e4/04/76e4043f07713ae7f4e52bc8fb711a69.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 50px);
+    display: grid;
+    place-content: center;
+    color: white;
+  }
+
+.list-movies-items {
+    width: 60%;
+    min-height: 20rem;
+    height: auto;
+    position: absolute;
+    padding: 1rem 0;
+    top: 40%;
+    left: 50%;
+    border-radius: 9px;
+    transform: translate(-50%, -30%);
+    background-color: rgba(38, 38, 38, 0.637);
+    /* opacity: .4; */
+    z-index: 10;
+}
+
+.list-movies-items  h1 {
+    color: #fff;
+    opacity: 1;
+    z-index: 30;
+}
+
+.list-movies-items  ul {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-movies-items  ul li {
+    width: 100%;
+    height: 2rem;
+    border-bottom: 1px solid #f3f3f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heart-icon {
+    color: #e00000;
+}

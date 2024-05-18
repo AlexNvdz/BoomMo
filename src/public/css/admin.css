@@ -1,0 +1,125 @@
+.container{
+  background-color: #151515;
+
+    padding: 3rem 0;
+}
+.container-cards{
+    row-gap: 2rem;
+    width: 90%;
+    padding: 3rem 0;
+    height: auto;
+    margin: auto;
+}
+.card-admin{
+    margin: 2rem auto;
+    background-color: rgba(73, 69, 69, 0.372);
+    border-radius: .9rem;
+    width: 50%;
+    height: 12rem;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+}
+.card-admin:hover{
+    background-color: #303030c7;
+    transform: scale(1.1);
+    transition: all ease-out 2s;
+}
+
+.card-info{
+    width: 12rem;
+    height: auto;
+    display: grid;
+    color: #fff;
+    place-content: center;
+    text-align: center;
+}
+.card-info b{
+    font-size: 2.1rem;
+}
+
+#container-btn-new-movie{
+    width: 95%;
+    margin: -3rem auto 0 auto;
+    display: flex;
+    height: 1.5rem;
+    padding: 1.2rem 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#container-btn-new-movie a {
+    padding: .2rem .9rem;
+    background-color: #ffb300c7;
+    border-radius: .5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+#form-add-movie{
+    width: 50%;
+    height: auto;
+    padding: .9rem 1.2rem;
+    margin: 1rem auto;
+    border-radius: .6rem;
+    background-color: #8e8b8b4b;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-add-movie .form-add-movie__inp {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+#form-add-movie input, textarea, select {
+    font-size: 1rem;
+    padding: .4rem .8rem;
+    border-radius: .7rem;
+}
+
+#container-title-form {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+
+.div-container-inps{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-reg-movie{
+    padding: .7rem 12rem;
+    background-color: #e8900cc7;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: .5rem;
+}
+
+#btn-reg-movie:hover{
+    opacity: .7;
+}
+
+
+
+.container-inp-imgs div {
+    display: flex;
+    justify-content: space-between;
+}
+.container-inp-imgs div input {
+    width: 70%;
+}
+.icon-agg, .icon-cinp{
+    font-size: 2rem;
+    cursor: pointer;
+}

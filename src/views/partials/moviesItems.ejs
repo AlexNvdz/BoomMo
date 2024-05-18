@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="list-movies-items">
+    <%if(movies.length > 0){%>
+      <%if (titlePage==="Favoritos" ){%>
+          <ul>
+            <%movies.forEach(mv=>{%>
+              <li>
+                <p><%=mv.titulo%></p>
+                <i class="bi heart-icon bi-heart-fill"></i>
+              </li>
+              <%})%>
+            </ul>
+        <%} else {%>
+          <ul>
+            <%movies.forEach(mv=>{%>
+              <li>
+                <p><%=mv.titulo%></p>
+                <p><%=mv.fecha%></p>
+              </li>
+              <%})%>
+            </ul>
+            <%}%>
+    <%} else {%>
+      <div style="width: 100%; height: 100%; display: flex; justify-content: center;  align-items: center;">
+        <h1 style="left: 50%; top: 50%;">No hay peliculas</h1>
+      </div>
+    <%}%>
+
+  </div>
+</div>

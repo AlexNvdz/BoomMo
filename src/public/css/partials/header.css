@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  align-items: center;
+}
+
+
+.menu-container {
+  background-color: black;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list-item {
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-list-item:hover {
+  color: orange;
+}
+
+.navbar-container.active {
+  background-color: white;
+
+  color: black;
+}
+
+
+#desplegable {
+  width: 5rem;
+  display: none;
+  height: 3rem;
+  top: 3rem;
+  right: 4rem;
+  background-color: #242323;
+  position: absolute;
+  text-decoration: none;
+  color: #fff;
+}
+
+#desplegable li {
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: .1rem 0;
+}
+
+#desplegable * {
+  color: #fff;
+}
+
+.profile-container:hover #desplegable {
+  display: block;
+}
+
+.menu-list-item.active {
+  color: orange;
+}
+
+.menu-list-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: transparent;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+
+.menu-list-item:hover::after,
+.menu-list-item.active::after {
+  width: 100%;
+  background-color: orange;
+}
+
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  height: 100%;
+  color: white;
+  font-family: "Sen", sans-serif;
+}
+
+.logo-container {
+  flex: 1;
+  margin-right: 250px;
+}
+
+.logo {
+  font-size: 30px;
+  color: orange;
+}
+
+.icon-container {
+  color: orange;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+
+.menu-container {
+  flex: 6;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+}
+
+.menu-list-item {
+  margin-right: 30px;
+}
+
+.menu-list-item.active {
+  font-weight: bold;
+}
+
+.profile-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile-text-container {
+  margin: 0 20px;
+}
+
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.toggle-icon {
+  color: goldenrod;
+}
+
+.toggle-ball {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  position: absolute;
+  right: 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s ease all;
+}
+
+footer {
+  width: 100%;
+  height: 12rem;
+  color: #fff;
+  background-color: #000;
+  display: grid;
+  place-content: center;
+}

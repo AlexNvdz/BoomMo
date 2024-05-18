@@ -1,0 +1,51 @@
+  <div class="movie-list-ctg">
+    <%if(movies.length> 0){%>
+      <%movies.forEach(mv=>{%>
+        <div class="movie-list-item">
+          <img class="movie-list-item-img" src="<%=mv.img_portada%>" alt="" />
+          <span class="movie-list-item-title">
+            <%=mv.titulo%>
+          </span>
+          <a href="/movies/view?movieid=<%=mv.id%>" class="movie-list-item-button" id="btn-play">
+            <i class="bi bi-play-circle"></i>
+          </a>
+          <%if (titlePage == "Favoritos"){%>
+            <button data-movieid="<%=mv.id%>" class="movie-list-item-button" id="btn-heartbreak">
+              <i style="pointer-events: none;" class="bi bi-heartbreak-fill"></i>
+            </button>
+          <%}%>
+        </div>
+        <%})%>
+          <%} else {%>
+            <h1 style="margin: auto;">No hay peliculas</h1>
+        <%}%>
+  </div>
+  <script>
+    const mvListCtg = document.querySelector(".movie-list-ctg")
+
+
+async function rmFav(eTarget) {
+    const id = eTarget.getAttribute("data-movieid");
+    const parent = eTarget.parentElement
+    mvListCtg.removeChild(parent)
+    await fetch("/users/deltfav",{
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({movieId: parseInt(id)})
+    })
+}
+
+
+
+mvListCtg.addEventListener("click", handleClick)
+
+
+function handleClick(e) {
+    const eTarget = e.target
+    const eClass = eTarget.className
+    const eId = eTarget.getAttribute("id")
+    if (eId.includes("btn-heartbreak")) rmFav(eTarget)
+}
+  </script>

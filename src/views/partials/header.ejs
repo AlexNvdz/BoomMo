@@ -8,10 +8,15 @@
     </div>
     <div class="menu-container">
       <ul class="menu-list">
+        <%if(typeof headerAdmin == "undefined"){%>
         <li><a href="/users/inicio" class="menu-list-item ">Inicio</a></li>
         <li><a href="/users/categorias" class="menu-list-item">Categorias</a></li>
         <li><a href="/users/favoritos" class="menu-list-item">Favoritos</a></li>
         <li><a href="/users/historial" class="menu-list-item">Historial</a></li>
+        <%} else {%>
+          <li><a href="/admin/dashboard" class="menu-list-item ">Dashboard</a></li>
+          <li><a href="/admin/peliculas" class="menu-list-item">Peliculas</a></li>
+        <%}%>
       </ul>
     </div>
     <div class="profile-container">

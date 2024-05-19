@@ -19,11 +19,7 @@
   </title>
 </head>
 <body>
-  <%if(typeof headerAdmin === "undefined"){%>
   <%- include("partials/header")%>
-  <%} else {%>
-    <%- include("partials/headerAdmin")%>
-  <%}%>
 
     <div class="container">
       <%for(component of listComponents){%>

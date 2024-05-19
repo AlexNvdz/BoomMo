@@ -10,7 +10,7 @@ routerAdmin.get("/dashboard", async (req, res) => {
       const lenMovies = await Movies.getLength()
       const lenUsers = await Users.getLength()
       const listComponents = ["partials/adminCard"]
-      res.render("index", { headerAdmin: "sddsd", stylesFiles, listComponents, lenUsers, lenMovies, titlePage: "Dashboard", name: "admin" })
+      res.render("index", { headerAdmin: true, stylesFiles, listComponents, lenUsers, lenMovies, titlePage: "Dashboard", name: "admin" })
 })
 
 

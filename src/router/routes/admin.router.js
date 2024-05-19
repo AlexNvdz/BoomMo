@@ -27,4 +27,10 @@ routerAdmin.get("/newmovie", async (req, res) => {
       res.render("index", { headerAdmin: true, stylesFiles, listComponents, titlePage: "Peliculas", name: "admin" })
 });
 
+routerAdmin.get("/perfil", (req, res) => {
+      const correo = req.session.email
+      const user = req.session.user
+      res.render("partials/perfil", {headerAdmin: true,name: user,correo})
+    });
+
 module.exports.routerAdmin = routerAdmin

@@ -1,5 +1,7 @@
 * {
   margin: 0;
+  text-decoration: none;
+  list-style: none;
   padding: 0;
 }
 
@@ -145,7 +147,7 @@
 }
 
 .profile-text-container {
-  margin: 0 20px;
+  margin: 0 1.2rem;
 }
 
 .profile-picture {
@@ -183,9 +185,50 @@
 
 footer {
   width: 100%;
+  padding-top: 2rem;
   height: 12rem;
   color: #fff;
   background-color: #000;
   display: grid;
+  text-align: center;
   place-content: center;
+  padding-bottom: 2rem;
+}
+
+footer div {
+  text-align: center;
+}
+footer b{
+  font-size: 1.1rem;
+}
+footer * {
+  margin-top: .6em;
+}
+footer div ul {
+  text-align: center;
+}
+
+footer div p{
+  margin-top: 1rem;
+}
+#list-modal{
+  background-color: rgb(23, 23, 23);
+  color: #fff;
+  position: absolute;
+  top: 3rem;
+  padding: .9rem 1rem;
+  margin-bottom: 2rem;
+  display: none;
+  font-size: 1rem;
+  right: 3rem;
+}
+#list-modal * {
+  color: #fff;
+  margin-top: .3rem;
+}
+.activate{
+  display: block;
+}
+.fa-caret-down{
+  cursor: pointer;
 }

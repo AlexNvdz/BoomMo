@@ -42,7 +42,7 @@ body {
   margin-top: 2rem;
 }
 
-.container-featured-descp{
+.container-featured-descp {
   width: 70%;
   height: auto;
 }
@@ -66,9 +66,11 @@ body {
   padding: 0 20px;
   margin-top: 3rem;
 }
-#movie-list-container-all{
+
+#movie-list-container-all {
   padding-bottom: 4rem;
 }
+
 #movie-list-wrapper-all {
   margin-top: 1rem;
 }
@@ -102,7 +104,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 3rem 0;
+  padding: 5rem 0;
   margin: 0 auto;
   gap: 2rem 1rem;
   width: 95%;
@@ -114,17 +116,18 @@ body {
   position: relative;
 }
 
-.btn-heart{
+.btn-heart {
   color: #b90808;
   position: absolute;
   left: 45%;
   bottom: -10%;
   font-size: 8rem;
-  transform: translate(-40%,-30%);
+  transform: translate(-40%, -30%);
   display: none;
   animation: 2s ease-in-out forwards show-btn-heart;
 }
-#btn-heartbreak{
+
+#btn-heartbreak {
   left: 15%;
   margin-right: 1rem;
   font-size: 1rem;
@@ -139,7 +142,8 @@ body {
 
 .movie-list-item:hover .movie-list-item-title,
 .movie-list-item:hover .movie-list-item-desc,
-.movie-list-item:hover .movie-list-item-button {
+.movie-list-item:hover .movie-list-item-button,
+.movie-list-item:hover .movie-list-desc {
   opacity: 1;
 }
 
@@ -162,6 +166,15 @@ body {
   transition: 1s all ease-in-out;
 }
 
+.movie-list-desc {
+  top: 85%;
+  position: absolute;
+  color: #fff;
+  transition: 1s all ease-in-out;
+  opacity: 0;
+  left: 50px;
+}
+
 .movie-list-item-desc {
   background-color: orange;
   padding: 10px;
@@ -175,7 +188,7 @@ body {
   transition: 1s all ease-in-out;
 }
 
-.container-btns{
+.container-btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -198,13 +211,13 @@ body {
   transition: 1s all ease-in-out;
 }
 
-#btn-heart{
+#btn-heart {
   left: 15%;
   font-size: 1.3rem;
   background-color: #b90808;
 }
 
-#btn-play{
+#btn-play {
   left: 30%;
   font-size: 1.3rem;
   background-color: #084cb9;
@@ -232,10 +245,10 @@ body {
 
 
 
-@media only screen and (max-width: 940px){
-    .menu-container{
-        display: none;
-    }
+@media only screen and (max-width: 940px) {
+  .menu-container {
+    display: none;
+  }
 }
 
 .wrapper {
@@ -273,11 +286,12 @@ body {
   text-decoration: underline;
 }
 
-@keyframes show-btn-heart{
-  0%{
+@keyframes show-btn-heart {
+  0% {
     opacity: 0;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }

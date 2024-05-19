@@ -6,6 +6,11 @@
           <span class="movie-list-item-title">
             <%=mv.titulo%>
           </span>
+          <%if (titlePage == "Historial"){%>
+            <span class="movie-list-desc" >
+              visto: <%=mv.fecha%>
+            </span>
+          <%}%>
           <a href="/movies/view?movieid=<%=mv.id%>" class="movie-list-item-button" id="btn-play">
             <i class="bi bi-play-circle"></i>
           </a>

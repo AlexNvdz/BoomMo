@@ -13,6 +13,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Roboto", sans-serif;
 }
 
@@ -362,7 +363,7 @@ body {
 .form-perfil-edit-container{
   background-color: black;
   border-radius: .5cm;
-  width: 50%;
+  width: 70%;
   height: auto;
   padding: .9rem 0;
 }
@@ -379,6 +380,62 @@ body {
   margin: .9rem auto;
   display: flex;
   gap: .8rem 1rem;
-  text-align: center;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.7rem;
+}
+.account-settings-textfield div span {
+  display: flex;
+  width: 40rem;
+  gap: .8rem;
+  justify-content: space-between;
+}
+
+.btn-edit-user{
+  background-color: #e38f07;
+  color: #fff;
+  height: 2.5rem;
+  width: 1.9rem;
+  font-size: 1rem;
+  border-radius: .6rem;
+  border: none;
+}
+.field{
+  width: 100%;
+  padding: .9rem .5rem;
+  border-radius: .5rem;
+  font-size: 1.2rem;
+}
+
+.container-alert{
+  width: 12rem;
+  padding: .9rem 1em;
+  position: absolute;
+  text-align: center;
+  border-radius: .4rem;
+  display: none;
+  background-color: #17bf3b;
+  color: #fff;
+  top: 4rem;
+  right: -15rem;
+}
+.container-alert b{
+  font-size: 1rem;
+}
+@keyframes showalert{
+  0%{
+    right: -15rem;
+  }
+  100%{
+    right: 2rem;
+  }
+}
+
+@keyframes hiddenalert{
+  0%{
+    right: 2rem;
+  }
+  100%{
+    right: -15rem;
+  }
 }

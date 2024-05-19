@@ -34,7 +34,7 @@ class UsersController {
                     if (contrs.length >= 8)  {
                         const hashPass = bcryptjs.hashSync(contrs, bcryptjs.genSaltSync(9))
                         body.contrs = hashPass
-                    } else return res.json({msg:"Contraseña debe contener mas de 8 caracteres",code:0})
+                    } else return res.json({msg:"Contraseña debe contener mas de 8 caracteres",bgCode:"#ce7209"})
                 }
                 
                 if(usrio) req.session.user = usrio
@@ -45,10 +45,10 @@ class UsersController {
                     id: userId
                 }
                 await Users.updt(bodyToSave)
-                return res.json({msg:"Datos actualizados exitosamente",code:1})
+                return res.json({msg:"Datos actualizados exitosamente",bgCode:"#17bf3b"})
             } 
             else {
-                return res.json({msg:"Campos vacios",code:0})
+                return res.json({msg:"Campos vacios",bgCode:"#de0808"})
             }
         } catch (error) {
             console.log(error)
@@ -74,7 +74,6 @@ class UsersController {
         try {
             const userId = req.session.userId
             const {movieId} = req.body
-            console.log(movieId);
             const verify = await Users.verifyFavorite({userId,movieId})
             if (verify.length < 1) await Users.aggFavorite({userId,movieId})
         } catch (error) {

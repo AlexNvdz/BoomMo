@@ -1,182 +1,224 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../resources/css/perfil.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-      #container-btn-mod{
-        width: 90%;
-        margin: auto;
-        display: flex;
-        justify-content: flex-end;
-      }
-      .field{
-        padding:.2rem .3rem;
-        font-size: 1rem;
-        display: none;
-      }
-      #btn-updt{
-        /* margin-left: 90%; */
-      }
-      .widget-alert{
-        width: 4rem;
-        height: 2rem;
-        background-color: #000;
-        color: #fff;
-        position: absolute;
-        z-index: 1;
-        display: grid;
-        place-content: center;
-        animation: slideDown 1s ease forwards;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../resources/css/perfil.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/resources/css/partials/header.css">
+  <style>
+    #container-btn-mod {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .field {
+      padding: .2rem .3rem;
+      font-size: 1rem;
+      display: none;
+    }
+
+    #btn-updt {
+      /* margin-left: 90%; */
+      font-size: 1.2rem;
+      background-color: #e38f07;
+      color: #fff;
+      font-weight: bold;
+      padding: .3rem .8rem;
+      cursor: pointer;
+      display: none;
+      border-radius: .2rem;
+    }
+
+    .widget-alert {
+      width: 4rem;
+      height: 2rem;
+      background-color: #000;
+      color: #fff;
+      position: absolute;
+      z-index: 1;
+      display: grid;
+      place-content: center;
+      animation: slideDown 1s ease forwards;
+      top: -100px;
+    }
+
+    @keyframes slideDown {
+      0% {
         top: -100px;
       }
-      @keyframes slideDown {
-        0% {
-            top: -100px;
-        }
-        100% {
-            top: 0;
-        }
+
+      100% {
+        top: 0;
+      }
     }
 
     @keyframes slideUp {
-        0% {
-            top: 0;
-        }
-        100% {
-            top: -100px;
-        }
+      0% {
+        top: 0;
       }
 
-    </style>
-    <title>Inicio</title>
-  </head>
-  <body>
-    <div class="widget-alert">
-      <p>Hello wordl</p>
-    </div>
-    <div id="navbar" class="navbar">
-     <%- include("./header")%>
+      100% {
+        top: -100px;
+      }
+    }
+  </style>
+  <title>Perfil</title>
+</head>
+
+<body>
+  <div id="navbar" class="navbar">
+    <%- include("./header")%>
       <div class="container">
         <form method="post" class="form-perfil-edit-container">
           <h1>Datos del perfil</h1>
           <div class="account-settings-textfield">
-            <span class="text-label-usuario">Nombre de usuario: </span>
-            <span class="settings-text-usuario-visible"> <%=name%></span>
-            <input class="field" type="text" id="inp-user" name="usrio">
-            <button
-              type="button"
-              class="acc-settings-button btn-edit-user"
-              title="Cambiar nombre de usuario"
-              id="btn-edit-user"
-              data-testid="setting-text-field-edit-btn"
-            >
+            <div>
+              <span class="text-label-usuario">Nombre de usuario: </span>
+              <span class="settings-text-usuario-visible">
+                <%=name%>
+              </span>
+              <input class="field" type="text" id="inp-user" placeholder="nuevo nombre de usuario" name="usrio">
+            </div>
+            <button type="button" class="acc-settings-button btn-edit-user" title="Cambiar nombre de usuario"
+              id="btn-edit-user" data-testid="setting-text-field-edit-btn">
               <i class="bx bxs-edit"></i>
             </button>
           </div>
 
           <div class="account-settings-textfield">
-            <span class="text-label-usuario">Correo electronico: </span>
-            <span class="settings-text-usuario-visible"> <%=correo%></span><input class="field" type="email" id="inp-email" name="correo">
-            <button
-              type="button"
-              class="acc-settings-button btn-edit-user"
-              title="Cambiar Correo"
-              id="btn-edit-email"
-              data-testid="setting-text-field-edit-btn"
-            >
+            <div>
+              <span class="text-label-usuario">Correo electronico: </span>
+              <span class="settings-text-usuario-visible">
+                <%=correo%>
+              </span>
+              <input class="field" placeholder="nuevo correo" type="email" id="inp-email" name="correo">
+            </div>
+            <button type="button" class="acc-settings-button btn-edit-user" title="Cambiar Correo" id="btn-edit-email"
+              data-testid="setting-text-field-edit-btn">
               <i class="bx bxs-edit"></i>
             </button>
           </div>
           <div class="account-settings-textfield">
-            <span class="text-label-usuario">Contraseña: </span>
-            <span class="settings-text-usuario-visible">********</span>
-            <input id="inp-pass" class="field" type="text" name="contrs">
-            <button
-              type="button"
-              class="acc-settings-button btn-edit"
-              title="Cambiar Contraseña"
-              id="btn-edit-pass"
-              data-testid="setting-text-field-edit-btn"
-            >
+            <div>
+              <span class="text-label-usuario">Contraseña: </span>
+              <span class="settings-text-usuario-visible">********</span>
+              <input id="inp-pass" class="field" type="text" placeholder="nueva contraseña" name="contrs">
+            </div>
+            <button type="button" class="acc-settings-button btn-edit-user btn-edit" title="Cambiar Contraseña" id="btn-edit-pass"
+              data-testid="setting-text-field-edit-btn">
               <i class="bx bxs-edit"></i>
             </button>
           </div>
-          <div id="container-btn-mod"> 
-            <button id="btn-updt">modificar</button>
+          <div id="container-btn-mod">
+            <button id="btn-updt">MODIFICAR</button>
           </div>
         </form>
       </div>
+      <div class="container-alert">
+        <b class="msg-alert">exito!</b>
+      </div>
     </div>
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    const form = document.querySelector(".form-perfil-edit-container")
-    const inpUser = document.querySelector("#inp-user")
-    const inpEmail = document.querySelector("#inp-email")
-    const inpPass = document.querySelector("#inp-pass")
-    const btnUpdt = document.querySelector("#btn-udpt")
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const form = document.querySelector(".form-perfil-edit-container")
+  const inpUser = document.querySelector("#inp-user")
+  const inpEmail = document.querySelector("#inp-email")
+  const inpPass = document.querySelector("#inp-pass")
+  const btnUpdt = document.querySelector("#btn-updt")
+  const inps = document.querySelectorAll("input")
 
-    
-    form.addEventListener("click", e =>{
-      const eTarget = e.target
-      const eClass = eTarget.className
-      const inp = eTarget.parentNode.previousElementSibling
-      const text = eTarget.parentNode.previousElementSibling.previousElementSibling
-      console.log(eClass)
-      if(eClass.includes("bxs-edit")){
-        eTarget.classList.replace("bxs-edit","bi-x-circle")
-         inp.style = "display: block;"
-         text.style = "display: none;"
-        }
-        if(eClass.includes("bi-x-circle")){
-        eTarget.classList.replace("bi-x-circle","bxs-edit")
-        inp.style = "display: none;"
-        text.style = "display: block;"
-        inp.value = ""
-        }
-    })
+  inps.forEach(inp => inp.addEventListener("input", handleInput))
 
 
-    document.querySelector("form").addEventListener("submit",handleSubmit)
-
-    async function handleSubmit(e) {
-      e.preventDefault()
-      const body = {
-        usrio: inpUser.value,
-        correo: inpEmail.value,
-        contrs: inpPass.value
-      }
-      const req = await fetch("/users/updtdata",{
-        method: "POST",
-        headers: {
-          "Content-type": "application/json"
-        },
-        body: JSON.stringify(body)
-      })
-      const res = await req.json()
-      alert(res.msg)
+  form.addEventListener("click", e => {
+    const eTarget = e.target
+    const eClass = eTarget.className
+    const inp = eTarget.parentNode.parentNode.children[0].children[2]
+    const text = eTarget.parentNode.parentNode.children[0].children[1]
+    if (eClass.includes("bxs-edit")) {
+      eTarget.classList.replace("bxs-edit", "bi-x-circle")
+      inp.style = "display: block;"
+      text.style = "display: none;"
     }
+    if (eClass.includes("bi-x-circle")) {
+      eTarget.classList.replace("bi-x-circle", "bxs-edit")
+      inp.style = "display: none;"
+      text.style = "display: block;"
+      inp.value = ""
+      const value = isValueList(valueLenBtn())
+      if (value.length === 0) btnUpdt.style = "display: none;"
+    }
+  })
 
+
+  document.querySelector("form").addEventListener("submit", handleSubmit)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const body = {
+      usrio: inpUser.value,
+      correo: inpEmail.value,
+      contrs: inpPass.value
+    }
+    const req = await fetch("/users/updtdata", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+    const res = await req.json()
+    const alert = document.querySelector(".container-alert")
+    const alertMsg = document.querySelector(".msg-alert")
+    alert.style.display = "block"
+    alert.style.animation = "showalert 4s ease"
+    alert.style.backgroundColor = res.bgCode
+    alertMsg.innerHTML = res.msg
     setTimeout(() => {
+      alert.style.animation = "hiddenalert 4s ease-out"
+      alertstyle.display = "none"
+    }, 3500);
+  }
+
+  setTimeout(() => {
     document.querySelector("#widget-alert").style.animation = 'slideUp 1s ease forwards';
     setTimeout(() => {
       document.querySelector("#widget-alert").style.display = 'none';
     }, 1000); // Después de la animación de desaparición
-}, 3000); // Después
-  </script>
+  }, 3000); // Después
+
+  function handleInput(e) {
+    if (e.target.value.length > 0) {
+      btnUpdt.style.display = "block"
+    } else {
+      btnUpdt.style.display = "none"
+    }
+  }
+
+  function valueLenBtn() {
+    let inps = document.querySelectorAll(".field");
+    let inpValuesLen = []
+    inps.forEach(input => {
+      inpValuesLen.push(input.value.length)
+    })
+    return inpValuesLen;
+  }
+
+  function isValueList(list) {
+    const value = list.filter(value => value > 0)
+    return value
+  }
+
+</script>
+
 </html>

@@ -147,7 +147,7 @@ class Users {
     static async getHistoryViews(userId) {
         try {
             const [results] = await poolConnection.query(`
-            SELECT p.titulo, p.img_portada, 
+            SELECT p.id, p.titulo, p.img_portada, 
             DATE_FORMAT(hv.fecha, "%d-%m-%Y") fecha FROM peliculas p 
             JOIN historial_visual hv 
             ON hv.id_pelicula = p.id 

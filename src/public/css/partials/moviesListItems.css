@@ -5,19 +5,15 @@
     min-height: calc(100vh - 50px);
     display: grid;
     place-content: center;
+    overflow-x: hidden;
     color: white;
   }
 
 .list-movies-items {
-    width: 60%;
-    min-height: 20rem;
+    width: 100vw;
+    min-height: 100vh;
     height: auto;
-    position: absolute;
-    padding: 1rem 0;
-    top: 40%;
-    left: 50%;
     border-radius: 9px;
-    transform: translate(-50%, -30%);
     background-color: rgba(38, 38, 38, 0.637);
     /* opacity: .4; */
     z-index: 10;
@@ -42,6 +38,7 @@
     height: 2rem;
     border-bottom: 1px solid #f3f3f3;
     display: flex;
+    font-size: 1.4rem;
     justify-content: space-between;
     align-items: center;
 }

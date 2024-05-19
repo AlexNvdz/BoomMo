@@ -50,9 +50,9 @@ routerUsers.get("/favoritos", async(req, res) => {
 routerUsers.get("/historial", async(req, res) => {
   const {userId,user} = req.session
   const movies = await Users.getHistoryViews(userId)
-  const listComponents = ["partials/moviesItems"]
-  const stylesFiles = ["../resources/css/partials/moviesListItems.css"]
-  res.render("index", { movies: req.session.user,movies,name: user,stylesFiles,listComponents,titlePage: "Historial"})
+  const listComponents = ["partials/movieItems"]
+  const stylesFiles = ["/resources/css/inicio.css"]
+  res.render("index", { movies,titlePage: "Historial",name: user,listComponents,stylesFiles: stylesFiles})
 });
 
 routerUsers.post("/updtdata", (req, res) => {

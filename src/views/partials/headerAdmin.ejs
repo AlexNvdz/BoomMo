@@ -15,14 +15,43 @@
       <div class="profile-container">
         <i class="bx bxs-user"></i>
         <div class="profile-text-container">
-          <a style="text-decoration: none; color: #fff;" href="/admin/perfil">
             <span class="profile-text">
               <%= name ? name : "" %>
             </span>
-          </a>
-          <i class="fas fa-caret-down"></i>
-          <a style="text-decoration: none; color: #fff;" href="/logout">Salir</a>
         </div>
       </div>
     </div>
   </div>
+  <ul id="list-modal">
+    <li>
+      <a href="/users/perfil">
+        <i class="fas fa-user"></i>
+        <span>
+          CUENTA
+        </span>
+      </a>
+    </li>
+    <li><a href="/logout">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>
+        SALIR
+      </span>
+    </a></li>
+  </ul>
+  <script>
+    const listModal = document.querySelector("#list-modal");
+    const profileContainer = document.querySelector(".profile-container");
+    profileContainer.addEventListener("click", e => {
+      const etarget = e.target
+      const targetClass = etarget.className
+      if (targetClass.includes("fa-caret-down")) {
+        etarget.classList.replace("fa-caret-down","bi-caret-up-fill")
+        listModal.style = "display: block"
+      }
+      if (targetClass.includes("bi-caret-up-fill")) {
+        etarget.classList.replace("bi-caret-up-fill","fa-caret-down")
+        listModal.style = "display: none"
+      }
+    });
+    
+  </script>

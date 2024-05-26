@@ -40,7 +40,7 @@ class Auth{
     static async deltOtDupl(id_usuario) {
         const [result] = await poolConnection.query(`
         DELETE FROM otp
-         id_usuario = ?
+         WHERE id_usuario = ?
         `,[id_usuario])
         }
     static async deltOtp(id_usuario,otp) {

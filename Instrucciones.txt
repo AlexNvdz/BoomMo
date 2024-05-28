@@ -1,4 +1,4 @@
-
+AVISO: Para correr este proyecto es necesario tener instalado NodeJS en tu computadora.
 
 1. instalar las dependencias del proyecto (ejecutar el comando npm install)
 

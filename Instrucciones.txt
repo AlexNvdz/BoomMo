@@ -6,7 +6,7 @@ AVISO: Para correr este proyecto es necesario tener instalado NodeJS en tu compu
 si no tienes contraseña para acceder a la bd dejala en blanco
 las demas variables que ya tienen un valor por defecto no las modificas
 
-3. crear la base de datos, ve a src/database/main.sql 
+3. crear la base de datos, ve a src/database/BoomMo.sql 
  copia todo el contenido y luego ve a xampp o workbench a pegarlo en la caja de consultas
  y ejecuta el script
 
